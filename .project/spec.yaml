@@ -36,8 +36,8 @@ environment:
             - name: jupyterlab
               type: jupyterlab
               class: webapp
-              start_command: jupyter lab --allow-root --port 8888 --ip 0.0.0.0 --no-browser --NotebookApp.base_url=\$PROXY_PREFIX --NotebookApp.default_url=/lab --NotebookApp.allow_origin='*'
-              health_check_command: '[ \$(echo url=\$(jupyter lab list | head -n 2 | tail -n 1 | cut -f1 -d'' '' | grep -v ''Currently'' | sed "s@/?@/lab?@g") | curl -o /dev/null -s -w ''%{http_code}'' --config -) == ''200'' ]'
+              start_command: jupyter lab --allow-root --port 8888 --ip 0.0.0.0 --no-browser --NotebookApp.base_url=$PROXY_PREFIX --NotebookApp.default_url=/lab --NotebookApp.allow_origin='*'
+              health_check_command: '[ $(echo url=$(jupyter lab list | head -n 2 | tail -n 1 | cut -f1 -d'' '' | grep -v ''Currently'' | sed ''s@/?@/lab?@g'') | curl -o /dev/null -s -w ''%{http_code}'' --config -) == ''200'' ]'
               stop_command: jupyter lab stop 8888
               user_msg: ""
               logfile_path: ""
@@ -73,6 +73,10 @@ environment:
                 - python3-dev
                 - python3-pip
                 - vim
+                - libxcb1
+                - libx11-xcb1
+                - libgl1
+                - libglib2.0-0
             - name: pip
               binary_path: /usr/bin/pip
               installed_packages:
@@ -82,7 +86,23 @@ environment:
             target: ""
     compose_file_path: ""
 execution:
-    apps: []
+    apps:
+        - name: 6-Axis-Science-Calibration
+          type: custom
+          class: webapp
+          start_command: export PROXY_PREFIX && streamlit run /project/gmm/scripts/gondurastration_science_calibration.py --server.port 8501 --server.address 0.0.0.0 --server.baseUrlPath="$PROXY_PREFIX"
+          health_check_command: curl -I http://localhost:8501
+          stop_command: pkill -f 'streamlit run /project/gmm/scripts/gondurastration_science_calibration.py'
+          user_msg: ""
+          logfile_path: ""
+          timeout_seconds: 60
+          icon_url: ""
+          webapp_options:
+            autolaunch: true
+            port: "8501"
+            proxy:
+                trim_prefix: false
+            url: http://localhost:8501
     resources:
         gpu:
             requested: 1
@@ -92,4 +112,8 @@ execution:
         - type: project
           target: /project/
           description: Project directory
+          options: rw
+        - type: host
+          target: /project/gmm/
+          description: 'GMM Full Project Root on G:'
           options: rw
