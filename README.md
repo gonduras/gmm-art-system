@@ -27,10 +27,14 @@ Once cloned into NVIDIA AI Workbench, you can immediately run the integrated app
    - In the Workbench sidebar, navigate to **Apps**.
    - Click on **6-Axis-Science-Calibration** to start the interactive Streamlit calibration and scoring interface.
 
-2. **Open JupyterLab Environment:**
+2. **Launch NVIDIA Deep Stack Bridge App:**
+   - In the Workbench sidebar, navigate to **Apps**.
+   - Click on **NVIDIA-Deep-Stack-Bridge** to monitor live DCGM GPU metrics (:9400), NemoClaw/OpenShell gateway routes, and Maxine OpenUSD synthesis.
+
+3. **Open JupyterLab Environment:**
    - Click **Open JupyterLab** to access the research notebooks, data pipelines, and spatial bridge tools.
    - All CUDA 12.4 dependencies, PyTorch libraries, and vision packages are pre-configured inside the container.
 
-3. **Explore Code & Data:**
-   - `/project/code/`: Python modules for spatial reasoning, LoRA inference, and GLiNER entity extraction.
+4. **Explore Code & Data:**
+   - `/project/code/`: Python modules for spatial reasoning, NVIDIA Deep Stack bridge, and GLiNER entity extraction.
    - `/project/data/`: Reference manifests, GNV metadata schemas, and calibration datasets.

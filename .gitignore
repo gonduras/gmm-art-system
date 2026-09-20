@@ -55,3 +55,11 @@ cover/
 # Workbench Project Layout
 data/scratch/*
 !data/scratch/.gitkeep
+
+# Scratch scripts
+apply_canonical_spec.py
+apply_fix.py
+fix_spaces.py
+generate_spec.py
+patch_quotes.py
+untitled.py

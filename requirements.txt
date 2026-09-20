@@ -7,3 +7,7 @@ jupyterlab>3.0
 transformers
 scipy
 scikit-learn
+usd-core==24.11
+requests
+httpx
+opencv-python-headless

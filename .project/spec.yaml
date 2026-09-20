@@ -103,6 +103,22 @@ execution:
             proxy:
                 trim_prefix: false
             url: http://localhost:8501
+        - name: NVIDIA-Deep-Stack-Bridge
+          type: custom
+          class: webapp
+          start_command: export PROXY_PREFIX && streamlit run /project/code/nvidia_deep_stack_bridge.py --server.port 8502 --server.address 0.0.0.0 --server.baseUrlPath="$PROXY_PREFIX"
+          health_check_command: curl -I http://localhost:8502
+          stop_command: pkill -f 'streamlit run /project/code/nvidia_deep_stack_bridge.py'
+          user_msg: ""
+          logfile_path: ""
+          timeout_seconds: 60
+          icon_url: ""
+          webapp_options:
+            autolaunch: true
+            port: "8502"
+            proxy:
+                trim_prefix: false
+            url: http://localhost:8502
     resources:
         gpu:
             requested: 1
@@ -117,3 +133,7 @@ execution:
           target: /project/gmm/
           description: 'GMM Full Project Root on G:'
           options: rw
+        - type: volume
+          target: /nvwb-shared-volume/
+          description: ""
+          options: volumeName=nvwb-shared-volume
