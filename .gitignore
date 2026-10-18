@@ -63,3 +63,6 @@ fix_spaces.py
 generate_spec.py
 patch_quotes.py
 untitled.py
+# Amp orbs
+.venv/
+.amp/portals/*

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Runs every time an orb wakes. Keep it fast; never install dependencies here.
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [ ! -x "$repo_root/.venv/bin/python" ]; then
+	echo "Python virtualenv missing; run .agents/setup" >&2
+	exit 1
+fi
