@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Gonduras Jitomirsky — Gondurastration</title>
+<meta name="description" content="Selected collage works by Alexander Gonduras Jitomirsky, founder of the Gonduras Meat Market. Analog collage, theatre scenography, editorial illustration, and artificial intelligence art, 20 years of practice.">
+<meta name="author" content="Alexander Gonduras Jitomirsky">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alexander Gonduras Jitomirsky — Gondurastration">
+<meta property="og:description" content="Selected collage works. Analog paper, lithographic ink, resin, and substrate fracture treated as load-bearing structure.">
+<style>
+  :root {
+    --paper: #efe9dd;
+    --paper-2: #e4dccb;
+    --ink: #14120f;
+    --ink-soft: #4a443b;
+    --rule: #14120f;
+    --accent: #b03a1e;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 16px/1.62 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .rule { border: 0; border-top: 2px solid var(--rule); margin: 0; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 64px 0 30px; }
+  header.hero .kicker {
+    font-family: "SF Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0 0 22px;
+  }
+  header.hero h1 {
+    font-size: clamp(38px, 7vw, 86px); line-height: .95; margin: 0 0 6px;
+    font-weight: 400; letter-spacing: -0.02em;
+  }
+  header.hero h1 em { font-style: normal; color: var(--accent); }
+  header.hero .sub {
+    font-size: clamp(17px, 2.1vw, 22px); line-height: 1.45; margin: 18px 0 0;
+    max-width: 46ch; color: var(--ink-soft);
+  }
+  header.hero .tags {
+    margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  header.hero .tags li {
+    font-family: "SF Mono", ui-monospace, Consolas, monospace;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    border: 1.5px solid var(--rule); padding: 5px 11px; background: var(--paper-2);
+  }
+
+  nav.toc {
+    position: sticky; top: 0; z-index: 10; background: var(--paper);
+    border-bottom: 1.5px solid var(--rule); padding: 11px 0;
+    font-family: "SF Mono", ui-monospace, Consolas, monospace; font-size: 12px;
+  }
+  nav.toc .wrap { display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.toc a { color: var(--ink); text-decoration: none; letter-spacing: .12em; text-transform: uppercase; }
+  nav.toc a:hover { color: var(--accent); }
+
+  section { padding: 54px 0 10px; }
+  section > h2 {
+    font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0 0 4px;
+    font-family: "SF Mono", ui-monospace, Consolas, monospace; font-weight: 400;
+  }
+  section > .lead { margin: 0 0 34px; color: var(--ink-soft); max-width: 62ch; }
+
+  .grid { display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+  .piece { margin: 0; }
+  .piece .frame {
+    display: block; background: #000; border: 1.5px solid var(--rule);
+    box-shadow: 7px 7px 0 rgba(20,18,15,.13); overflow: hidden; text-decoration: none;
+  }
+  .piece .frame img {
+    display: block; width: 100%; height: auto; image-rendering: auto;
+    transition: transform .5s cubic-bezier(.2,.7,.3,1);
+  }
+  .piece .frame:hover img { transform: scale(1.035); }
+  .piece figcaption { padding-top: 13px; }
+  .piece h3 { font-size: 19px; margin: 0 0 5px; font-weight: 400; letter-spacing: .01em; }
+  .piece .meta, .clip .meta {
+    margin: 0; display: flex; flex-wrap: wrap; gap: 12px;
+    font-family: "SF Mono", ui-monospace, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .piece .meta .hash { opacity: .62; }
+  .voice {
+    margin: 11px 0 0; padding: 9px 0 9px 14px; border-left: 3px solid var(--accent);
+    font-style: italic; color: var(--ink-soft); font-size: 15px;
+  }
+
+  .clips { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+  .clip { margin: 0; }
+  .clip video { width: 100%; height: auto; display: block; background: #000; border: 1.5px solid var(--rule); box-shadow: 7px 7px 0 rgba(20,18,15,.13); }
+  .clip figcaption { padding-top: 13px; }
+  .clip h3 { font-size: 17px; margin: 0 0 5px; font-weight: 400; text-transform: capitalize; }
+  .clip .note { margin: 9px 0 0; color: var(--ink-soft); font-size: 15px; max-width: 52ch; }
+
+  .colophon { padding: 58px 0 70px; }
+  .colophon dl { margin: 0; display: grid; grid-template-columns: minmax(140px, max-content) 1fr; gap: 9px 26px; }
+  .colophon dt {
+    font-family: "SF Mono", ui-monospace, Consolas, monospace; font-size: 10.5px;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px;
+  }
+  .colophon dd { margin: 0; font-size: 15.5px; max-width: 72ch; }
+  footer {
+    border-top: 2px solid var(--rule); padding: 22px 0 40px;
+    font-family: "SF Mono", ui-monospace, Consolas, monospace;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  @media (max-width: 640px) {
+    header.hero { padding-top: 42px; }
+    .colophon dl { grid-template-columns: 1fr; gap: 3px 0; }
+    .colophon dd { margin-bottom: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Gonduras Meat Market · selected works</p>
+    <h1>Alexander<br>Gonduras <em>Jitomirsky</em></h1>
+    <p class="sub">Analog collage, theatre scenography, editorial illustration and
+    artificial intelligence art. Twenty years of a material practice in which paper
+    grain, ink tooth and substrate fracture are treated as load-bearing structure
+    rather than surface effect.</p>
+    <ul class="tags">
+      <li>Gondurastration</li>
+      <li>Collage</li>
+      <li>Scenography</li>
+      <li>Editorial</li>
+      <li>Animation</li>
+      <li>AI&nbsp;Art</li>
+    </ul>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#works">Selected works</a>
+    <a href="#motion">Artwork in motion</a>
+    <a href="#colophon">Colophon</a>
+  </div>
+</nav>
+
+<main>
+  <section id="works">
+    <div class="wrap">
+      <h2>Selected works</h2>
+      <p class="lead">Ten pieces from the artist's own <em>BEST</em> collection — the
+      selection he made with his own eye. Click any work for the print-resolution file.</p>
+      <div class="grid">
+    <figure class="piece" data-slug="16_sf_17_gg">
+      <a class="frame" href="artworks/16_sf_17_gg.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/16_sf_17_gg.jpg" alt="16 sf 17 gg — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>16 sf 17 gg</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 ceec1afae1ebc0f1…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="05_6">
+      <a class="frame" href="artworks/05_6.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/05_6.jpg" alt="05 6 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>05 6</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 466da053944fd620…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="01_3_up_2">
+      <a class="frame" href="artworks/01_3_up_2.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/01_3_up_2.jpg" alt="01 3 up 2 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>01 3 up 2</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 561f1cc4cb415a4f…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="07_big_5">
+      <a class="frame" href="artworks/07_big_5.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/07_big_5.jpg" alt="07 big 5 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>07 big 5</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 c5ed9bc576abbde6…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="11_tr_2">
+      <a class="frame" href="artworks/11_tr_2.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/11_tr_2.jpg" alt="11 TR 2 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>11 TR 2</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 19dbd39f886cc6cc…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="ref_out3-hand_upscl">
+      <a class="frame" href="artworks/ref_out3-hand_upscl.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/ref_out3-hand_upscl.jpg" alt="REF out3 HAND UPSCL — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>REF out3 HAND UPSCL</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 42ec21324ee21279…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="08_cover_fin2">
+      <a class="frame" href="artworks/08_cover_fin2.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/08_cover_fin2.jpg" alt="08 cover fin2 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>08 cover fin2</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 843300b2054cc6cc…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="21_5">
+      <a class="frame" href="artworks/21_5.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/21_5.jpg" alt="21 5 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>21 5</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 966011a2b3d159b0…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="ref_5ml_2">
+      <a class="frame" href="artworks/ref_5ml_2.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/ref_5ml_2.jpg" alt="REF 5ml 2 — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>REF 5ml 2</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 18a932ba3b8b94f9…</span>
+        </p>
+        
+      </figcaption>
+    </figure>
+    <figure class="piece" data-slug="10-problems-of-russian-economy">
+      <a class="frame" href="artworks/10-problems-of-russian-economy.jpg" target="_blank" rel="noopener">
+        <img src="thumbs/10-problems-of-russian-economy.jpg" alt="10 problems of russian economy — collage by Alexander Gonduras Jitomirsky" loading="lazy" width="480" height="360">
+      </a>
+      <figcaption>
+        <h3>10 problems of russian economy</h3>
+        <p class="meta">
+          <span>collage</span><span>2026</span>
+          <span class="hash" title="sha256 of the source file">sha256 1573e46a3a0fa76d…</span>
+        </p>
+        <blockquote class="voice">texture, light - all BEST. this is &quot;ten problems of russian economy&quot; and there is my detailed analysis ofthis work. SF Latent Archipelagus (assumption)</blockquote>
+      </figcaption>
+    </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="motion">
+    <div class="wrap">
+      <h2>Artwork in motion</h2>
+      <p class="lead">Two treatments of a single source collage. The material stays
+      still; the viewpoint moves and the depth already built into the construction is
+      revealed. Nothing is added to the picture.</p>
+      <div class="clips">
+    <figure class="clip">
+      <video controls preload="metadata" playsinline
+             >
+        <source src="video/A_camera_led_web.mp4" type="video/mp4">
+      </video>
+      <figcaption>
+        <h3>A camera led</h3>
+        <p class="meta"><span>artwork → motion</span><span>5 s</span></p>
+        <p class="note">The source artwork holds still. The viewpoint shifts and
+        the depth that was already built into the collage is revealed — no new
+        object is introduced.</p>
+      </figcaption>
+    </figure>
+    <figure class="clip">
+      <video controls preload="metadata" playsinline
+             >
+        <source src="video/B_freer_motion_web.mp4" type="video/mp4">
+      </video>
+      <figcaption>
+        <h3>B freer motion</h3>
+        <p class="meta"><span>artwork → motion</span><span>5 s</span></p>
+        <p class="note">The source artwork holds still. The viewpoint shifts and
+        the depth that was already built into the collage is revealed — no new
+        object is introduced.</p>
+      </figcaption>
+    </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="colophon" id="colophon">
+    <div class="wrap">
+      <h2>Colophon</h2>
+      <hr class="rule" style="margin:14px 0 26px">
+      <dl>
+        <dt>Selection</dt>
+        <dd>Ten works drawn from the artist's own <em>BEST</em> collection, ranked by his
+        own rating and then by measured spatial contrast so the set shows range.
+        Nine other files in that folder were excluded on byte-hash evidence: they are
+        machine generations, not original work.</dd>
+
+        <dt>Provenance</dt>
+        <dd>Every work on this page carries the SHA256 of its source file. Published
+        images are web masters rendered at up to 2000&nbsp;px on the long edge; the
+        original bytes remain the reference, and the process video is published
+        alongside its own source copy and hash.</dd>
+
+        <dt>Voice</dt>
+        <dd>Any quoted text is the artist's own, reproduced verbatim from his
+        curation record and attributed to him. Nothing on this page has been
+        paraphrased by an agent.</dd>
+
+        <dt>Not shown</dt>
+        <dd>No axis scores appear here. The six-axis framework is retired as
+        evaluation doctrine and is not an artwork label; the artist's eye is the
+        only judgement in this collection.</dd>
+
+        <dt>Studio</dt>
+        <dd>Gonduras Meat Market — a local-first art and generative research
+        laboratory founded by the artist, with the artist as sole authority over
+        its output.</dd>
+
+        <dt>Enquiries</dt>
+        <dd>Gonduras Meat Market, Jerusalem. Commissions, exhibitions, editorial
+        and scenography work, and research collaboration.</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Alexander Gonduras Jitomirsky · Gonduras Meat Market, Jerusalem
+  </div>
+</footer>
+
+</body>
+</html>
