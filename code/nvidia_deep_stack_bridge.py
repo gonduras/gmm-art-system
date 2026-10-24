@@ -82,7 +82,7 @@ with col4:
 st.divider()
 
 # Detailed tabs
-tab1, tab2, tab3 = st.tabs(["OpenUSD & Maxine Pipeline", "6-Axis Canonical Calibration", "NemoClaw Inference Log"])
+tab1, tab2 = st.tabs(["OpenUSD & Maxine Pipeline", "NemoClaw Inference Log"])
 
 with tab1:
     st.header("OpenUSD + Maxine Pipeline Status")
@@ -95,11 +95,6 @@ with tab1:
         st.success("Pipeline operational: OpenUSD layer generation, matting and mesh creation verified.")
 
 with tab2:
-    st.header("6-Axis Science Calibration")
-    st.markdown("Direct linkage to `gondurastration_science_calibration.py` on G: project root.")
-    st.code("streamlit run /project/gmm/scripts/gondurastration_science_calibration.py --server.port 8501", language="bash")
-
-with tab3:
     st.header("NemoClaw & OpenShell Sandbox Management")
     st.markdown("""
     - **CLI Location:** `/home/gonduras/.local/bin/nemoclaw`
