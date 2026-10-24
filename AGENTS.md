@@ -14,7 +14,7 @@ This is an NVIDIA AI Workbench project. `.project/spec.yaml` defines the Workben
 - `.agents/setup` installs system packages, configures Git LFS, and installs `requirements.txt` into `.venv` with `uv`. When you add a dependency, run `.agents/setup` again instead of installing packages by hand.
 - `.venv/bin` is on `PATH` in login shells inside the repository, so `python`, `streamlit`, and `jupyter` resolve to the virtualenv.
 - Orbs have no GPU. PyTorch is the CPU build, and `torch.cuda.is_available()` is `False`. Do not assume CUDA, DCGM (`:9400`), or NVIDIA drivers are available.
-- `/project/` and `/project/gmm/` are Workbench mounts that do not exist in orbs. Code that reads them, including the 6-Axis Science Calibration app, cannot run there.
+- `/project/` and `/project/gmm/` are Workbench mounts that do not exist in orbs. Code that reads them cannot run there.
 
 ## Running apps
 

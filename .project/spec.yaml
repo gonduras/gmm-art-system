@@ -87,22 +87,6 @@ environment:
     compose_file_path: ""
 execution:
     apps:
-        - name: 6-Axis-Science-Calibration
-          type: custom
-          class: webapp
-          start_command: export PROXY_PREFIX && streamlit run /project/gmm/scripts/gondurastration_science_calibration.py --server.port 8501 --server.address 0.0.0.0 --server.baseUrlPath="$PROXY_PREFIX"
-          health_check_command: curl -I http://localhost:8501
-          stop_command: pkill -f 'streamlit run /project/gmm/scripts/gondurastration_science_calibration.py'
-          user_msg: ""
-          logfile_path: ""
-          timeout_seconds: 60
-          icon_url: ""
-          webapp_options:
-            autolaunch: true
-            port: "8501"
-            proxy:
-                trim_prefix: false
-            url: http://localhost:8501
         - name: NVIDIA-Deep-Stack-Bridge
           type: custom
           class: webapp
