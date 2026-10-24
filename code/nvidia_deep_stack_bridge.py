@@ -33,14 +33,16 @@ with col1:
         if resp.status_code == 200:
             st.success("DCGM Exporter Active (:9400)")
             for line in resp.text.splitlines():
-                if "DCGM_FI_DEV_GPU_UTIL" in line and not line.startswith("#"):
-                    val = line.split()[-1]
+                if not line or line[0] == '#':
+                    continue
+                if "DCGM_FI_DEV_GPU_UTIL" in line:
+                    val = line.rsplit(None, 1)[-1]
                     st.metric("GPU Utilization", f"{float(val):.1f}%")
-                elif "DCGM_FI_DEV_FB_USED" in line and not line.startswith("#"):
-                    val = line.split()[-1]
+                elif "DCGM_FI_DEV_FB_USED" in line:
+                    val = line.rsplit(None, 1)[-1]
                     st.metric("VRAM Used", f"{float(val):.0f} MB")
-                elif "DCGM_FI_DEV_GPU_TEMP" in line and not line.startswith("#"):
-                    val = line.split()[-1]
+                elif "DCGM_FI_DEV_GPU_TEMP" in line:
+                    val = line.rsplit(None, 1)[-1]
                     st.metric("GPU Temp", f"{float(val):.0f} °C")
         else:
             st.warning(f"DCGM status: {resp.status_code}")
