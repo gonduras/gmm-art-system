@@ -13,6 +13,7 @@ import json
 import time
 import requests
 import streamlit as st
+import logging
 
 st.set_page_config(
     page_title="GMM NVIDIA Deep Stack Bridge",
@@ -45,7 +46,8 @@ with col1:
         else:
             st.warning(f"DCGM status: {resp.status_code}")
     except Exception as e:
-        st.error(f"DCGM offline / unreachable: {e}")
+        logging.error(f"DCGM offline / unreachable: {e}")
+        st.error("DCGM offline / unreachable")
 
 # 2. NemoClaw / OpenShell Gateway
 with col2:
@@ -57,7 +59,8 @@ with col2:
         st.markdown("**Inference Route:** `nvidia/llama-3.1-nemotron-70b-instruct`")
         st.success("Gateway & Providers Registered")
     except Exception as e:
-        st.error(f"NemoClaw error: {e}")
+        logging.error(f"NemoClaw error: {e}")
+        st.error("NemoClaw error: Gateway unreachable")
 
 # 3. NVIDIA Maxine VFX SDK
 with col3:
