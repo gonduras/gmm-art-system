@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    defaultPrim = "FrankensteinAssemblageV7"
+    upAxis = "Z"
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    startTimeCode = 1
+    endTimeCode = 480
+    documentation = "GMM Frankenstein assemblage v7 - true PSD colors, opaque, internal spars"
+)
+# Lineage: Artist Alexander Gonduras Jitomirsky, sole visual authority, with GONVEX/Spark - ADVISORY ONLY
+# Ratified directive only - P13 rejected except witness panel
+# STYLE LAW: gondurastration paper collage - flat faceted skins front, opaque color-matched grafts behind,
+# internal copper spars #f4a261 birds/fish #4cc9f0 cliffs, NO surface wireframe
+# Eye rulings: P06 flat red sticker only, P15 silver/paper only, no glassy beads anywhere
+# GLB: ../muse_frankenstein/frankenstein_assemblage_stage_v7.glb (relative)
+# v7: smooth-shaded + weighted normals, tuck 0.90, amplified act motion, light ramp
+# Motion: 24fps 480f hero - 0-4s front collage, 4-12s 32deg oblique reveal, 12-20s macro beak-tail wriggle
+def Scope "FrankensteinAssemblage" (
+)
+    def Xform "P10_cloud" (
+        string family = "P10_cloud"
+        color3f[] primvars:emission = [(0.792, 0.816, 0.776)]
+    )
+    def Xform "P11_far" (
+        string family = "P11_far"
+        color3f[] primvars:emission = [(0.282, 0.259, 0.188)]
+    )
+    def Xform "LEFT_cliff" (
+        string family = "LEFT_cliff"
+        color3f[] primvars:emission = [(0.376, 0.306, 0.227)]
+    )
+    def Xform "RIGHT_cliff" (
+        string family = "RIGHT_cliff"
+        color3f[] primvars:emission = [(0.541, 0.431, 0.345)]
+    )
+    def Xform "P06_orange" (
+        string family = "P06_orange"
+        color3f[] primvars:emission = [(0.494, 0.318, 0.231)]
+    )
+    def Xform "P09_botanical" (
+        string family = "P09_botanical"
+        color3f[] primvars:emission = [(0.227, 0.424, 0.204)]
+    )
+    def Xform "P08_turquoise" (
+        string family = "P08_turquoise"
+        color3f[] primvars:emission = [(0.071, 0.541, 0.518)]
+    )
+    def Xform "P13_witness" (
+        string family = "P13_witness"
+        color3f[] primvars:emission = [(0.094, 0.475, 0.427)]
+    )
+    def Xform "P14_blue" (
+        string family = "P14_blue"
+        color3f[] primvars:emission = [(0.149, 0.439, 0.62)]
+    )
+    def Xform "P15_fish" (
+        string family = "P15_fish"
+        color3f[] primvars:emission = [(0.11, 0.31, 0.271)]
+    )
+    def Camera "FrontCam" ( float focalLength = 50
+        point3f position = (-0.019, -1.6, 0.064) )
+    def Camera "MacroCam" ( float focalLength = 80
+        point3f position = (0.178, -0.930, 0.448) )
