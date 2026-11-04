@@ -1,0 +1,153 @@
+{
+ "schema": "gmm-hackathon-manifest/2",
+ "utc": "2026-11-04",
+ "lineage": "Artist Alexander Gonduras Jitomirsky, sole visual authority, with GONVEX, AGY, Kepler, Codex, Gemini, Jules, Muse Spark - ADVISORY ONLY",
+ "authority": "Council DIRECTIVE_GONDURASTRATION_OUTSIDE_MODELS_2026-11-03.md is the ONLY style authority; 6-axis doctrine RETIRED",
+ "entries": [
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_stage.glb",
+   "bytes": 806629632,
+   "sha256": "8a7eae890f4b226ef75da98334b2c0c427c200f34afb01296f71fba42061ec73"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_stage_v4.glb",
+   "bytes": 806562892,
+   "sha256": "f64072f6d6ef3289a841f5c4717546c840ce8541edfa614d6f9fc9c580f1b746"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_stage_v5.glb",
+   "bytes": 806562892,
+   "sha256": "f64072f6d6ef3289a841f5c4717546c840ce8541edfa614d6f9fc9c580f1b746"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_proof.png",
+   "bytes": 4143197,
+   "sha256": "af550204d0bf45546b1acb953b9a9b06168c388a94ff7e273a3a51a708838095"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_proof_v4.png",
+   "bytes": 4162156,
+   "sha256": "5d7aea91ec2769403582f2504f647aced33dff663ba954b02cb5e8b6fdfcaf79"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_wireframe_proof_v5.png",
+   "bytes": 4154075,
+   "sha256": "0b63c1def080a8a926a2a42370a29e9e20ed777985408ccb081a045c6eeb694a"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_layout.json",
+   "bytes": 4361,
+   "sha256": "6e2658963e87ea32e8878c1a34f5536caa008970fbbc72bd0748b8e34e5fc7a2"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_layout_v4.json",
+   "bytes": 4361,
+   "sha256": "4b687f16cfc9891e4e67fc04da12b9d249aa92500cbf1737f2ff0ee90ffcbefc"
+  },
+  {
+   "path": "muse_frankenstein/frankenstein_layout_v5.json",
+   "bytes": 4375,
+   "sha256": "1612bc443216a69539d05634509cf6e94e5a95610ecff1c208479e0008851c20"
+  },
+  {
+   "path": "muse_taskc/usda/frankenstein_stage.usda",
+   "bytes": 2229,
+   "sha256": "fc11a762d6b38cff51ba74719e71ec2ce586cb5db74e76c12c75a4087968ff40"
+  },
+  {
+   "path": "muse_taskc/usda/frankenstein_stage_v4.usda",
+   "bytes": 2229,
+   "sha256": "45b6dbdc62c476ee46f7c7f3e827c191a3c7dd59b5ae7976ea6b14643cefc13e"
+  },
+  {
+   "path": "muse_taskc/usda/frankenstein_stage_v5.usda",
+   "bytes": 2229,
+   "sha256": "e2ba286b9fc069a19c72e391307300c3b8396ecf7a79f045c43d940bbd60920a"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_front_0deg.png",
+   "bytes": 1374523,
+   "sha256": "91a1df28522e8aa8ce3a00cc907fb20c74fb91e9ec3e5f27c73ff2ae224b75a1"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_oblique_25deg.png",
+   "bytes": 1391694,
+   "sha256": "d8a1e2f7783d9bc0209e995f5904d9c02ff4b260905139a04a434ba5c186e8a4"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_side_45deg.png",
+   "bytes": 551949,
+   "sha256": "5c68b759ea49d2cb37887aa8749832626e344e21703c1581ff23b9d09c745869"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_macro_beak_tail.png",
+   "bytes": 1493019,
+   "sha256": "bfbe15c2ec893c52e6fca790a2be29e81df6815340eb0f0653d9e830e2f97aa4"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v4_front_0deg.png",
+   "bytes": 1373516,
+   "sha256": "812563f41e97dc2bf29a1752b02a90e3aa03ea898b598b90c10756ef2ca8a29a"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v4_oblique_25deg.png",
+   "bytes": 1395893,
+   "sha256": "787c88b0ea7eead74c2e5a4848bb2201b1a77033108c9dd396d13e9a59325997"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v4_side_45deg.png",
+   "bytes": 551890,
+   "sha256": "6d8f284dc8ff0ffeb9e14a273295874c7df768972f7fb7e43681fe27242d54fe"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v4_macro_beak_tail.png",
+   "bytes": 1500366,
+   "sha256": "02ce9a3fc3a51f479d27f8a7e322fe5c2a16d5cb68ff8efd9e7c37db0f55c5df"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v5_front_0deg.png",
+   "bytes": 1373516,
+   "sha256": "812563f41e97dc2bf29a1752b02a90e3aa03ea898b598b90c10756ef2ca8a29a"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v5_oblique_25deg.png",
+   "bytes": 1395893,
+   "sha256": "787c88b0ea7eead74c2e5a4848bb2201b1a77033108c9dd396d13e9a59325997"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v5_side_45deg.png",
+   "bytes": 551890,
+   "sha256": "6d8f284dc8ff0ffeb9e14a273295874c7df768972f7fb7e43681fe27242d54fe"
+  },
+  {
+   "path": "muse_frankenstein/turntables/frankenstein_v5_macro_beak_tail.png",
+   "bytes": 1500366,
+   "sha256": "02ce9a3fc3a51f479d27f8a7e322fe5c2a16d5cb68ff8efd9e7c37db0f55c5df"
+  },
+  {
+   "path": "meshy_ballen_cli/ballen_contact_sheet.jpg",
+   "bytes": 1952467,
+   "sha256": "905df7514a60882e3ca9564e9a3b6329fe807577579628005391d84813589b27"
+  },
+  {
+   "path": "meshy_ballen_cli/ballen_models_manifest.json",
+   "bytes": 7780,
+   "sha256": "f5f0b5d9282361b2e67f73d84bcf7f6312a02b638848d6dbfaebefad5a557c5e"
+  },
+  {
+   "path": "muse_taskc/toolpaths/toolpaths_manifest.json",
+   "bytes": 1324,
+   "sha256": "771e84366ebce15339c9f6920f0a597da0385bf562479e06180a59a7243c4a01"
+  },
+  {
+   "path": "muse_taskc/motion/motion_tables_p06_p15.json",
+   "bytes": 11130,
+   "sha256": "5c4d0e90956487e4125b331908bf39fa7ee65f6f27b952b6f481be89e1a129ef"
+  },
+  {
+   "path": "muse_taskc/motion/unified_keyframes.json",
+   "bytes": 35848,
+   "sha256": "f366113b290cbbf149793ee74f4b934bca0aa778d97e29cb195324545ee2aa61"
+  }
+ ]
+}
