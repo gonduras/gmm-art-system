@@ -29,19 +29,20 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.subheader("📊 GPU Telemetry (DCGM)")
     try:
-        resp = requests.get("http://localhost:9400/metrics", timeout=2)
+        resp = requests.get("http://localhost:9400/metrics", timeout=2, stream=True)
         if resp.status_code == 200:
             st.success("DCGM Exporter Active (:9400)")
-            for line in resp.text.splitlines():
-                if "DCGM_FI_DEV_GPU_UTIL" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("GPU Utilization", f"{float(val):.1f}%")
-                elif "DCGM_FI_DEV_FB_USED" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("VRAM Used", f"{float(val):.0f} MB")
-                elif "DCGM_FI_DEV_GPU_TEMP" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("GPU Temp", f"{float(val):.0f} °C")
+            for line in resp.iter_lines(decode_unicode=True):
+                if line:
+                    if "DCGM_FI_DEV_GPU_UTIL" in line and not line.startswith("#"):
+                        val = line.split()[-1]
+                        st.metric("GPU Utilization", f"{float(val):.1f}%")
+                    elif "DCGM_FI_DEV_FB_USED" in line and not line.startswith("#"):
+                        val = line.split()[-1]
+                        st.metric("VRAM Used", f"{float(val):.0f} MB")
+                    elif "DCGM_FI_DEV_GPU_TEMP" in line and not line.startswith("#"):
+                        val = line.split()[-1]
+                        st.metric("GPU Temp", f"{float(val):.0f} °C")
         else:
             st.warning(f"DCGM status: {resp.status_code}")
     except Exception as e:
