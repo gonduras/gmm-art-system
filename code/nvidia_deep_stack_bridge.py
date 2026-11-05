@@ -12,6 +12,7 @@ import sys
 import json
 import time
 import requests
+import logging
 import streamlit as st
 
 st.set_page_config(
@@ -45,7 +46,8 @@ with col1:
         else:
             st.warning(f"DCGM status: {resp.status_code}")
     except Exception as e:
-        st.error(f"DCGM offline / unreachable: {e}")
+        logging.error(f"DCGM offline / unreachable: {e}", exc_info=True)
+        st.error("DCGM offline / unreachable.")
 
 # 2. NemoClaw / OpenShell Gateway
 with col2:
@@ -57,7 +59,8 @@ with col2:
         st.markdown("**Inference Route:** `nvidia/llama-3.1-nemotron-70b-instruct`")
         st.success("Gateway & Providers Registered")
     except Exception as e:
-        st.error(f"NemoClaw error: {e}")
+        logging.error(f"NemoClaw error: {e}", exc_info=True)
+        st.error("An error occurred with NemoClaw. Please check internal logs.")
 
 # 3. NVIDIA Maxine VFX SDK
 with col3:
