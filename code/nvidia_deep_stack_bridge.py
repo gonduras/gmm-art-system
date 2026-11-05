@@ -8,8 +8,6 @@ Provides live observability and pipeline integration across:
 """
 
 import os
-import sys
-import json
 import time
 import requests
 import streamlit as st
