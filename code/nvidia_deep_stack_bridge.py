@@ -32,16 +32,31 @@ with col1:
         resp = requests.get("http://localhost:9400/metrics", timeout=2)
         if resp.status_code == 200:
             st.success("DCGM Exporter Active (:9400)")
-            for line in resp.text.splitlines():
-                if "DCGM_FI_DEV_GPU_UTIL" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("GPU Utilization", f"{float(val):.1f}%")
-                elif "DCGM_FI_DEV_FB_USED" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("VRAM Used", f"{float(val):.0f} MB")
-                elif "DCGM_FI_DEV_GPU_TEMP" in line and not line.startswith("#"):
-                    val = line.split()[-1]
-                    st.metric("GPU Temp", f"{float(val):.0f} °C")
+
+            def extract_metric(text, metric_name):
+                idx = text.find("\n" + metric_name)
+                if idx == -1:
+                    if text.startswith(metric_name):
+                        idx = 0
+                    else:
+                        return None
+                else:
+                    idx += 1
+                end_idx = text.find("\n", idx)
+                line = text[idx:end_idx] if end_idx != -1 else text[idx:]
+                return float(line.rsplit(maxsplit=1)[-1])
+
+            util = extract_metric(resp.text, "DCGM_FI_DEV_GPU_UTIL")
+            if util is not None:
+                st.metric("GPU Utilization", f"{util:.1f}%")
+
+            fb = extract_metric(resp.text, "DCGM_FI_DEV_FB_USED")
+            if fb is not None:
+                st.metric("VRAM Used", f"{fb:.0f} MB")
+
+            temp = extract_metric(resp.text, "DCGM_FI_DEV_GPU_TEMP")
+            if temp is not None:
+                st.metric("GPU Temp", f"{temp:.0f} °C")
         else:
             st.warning(f"DCGM status: {resp.status_code}")
     except Exception as e:
