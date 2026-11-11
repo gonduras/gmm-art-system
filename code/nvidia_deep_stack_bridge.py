@@ -21,7 +21,7 @@ def fetch_dcgm_metrics():
     try:
         resp = requests.get("http://localhost:9400/metrics", timeout=2)
         return resp.status_code, resp.text
-    except Exception:
+    except Exception as e:
         logging.error("Failed to fetch DCGM metrics", exc_info=True)
         return 500, "Internal error while fetching metrics."
 

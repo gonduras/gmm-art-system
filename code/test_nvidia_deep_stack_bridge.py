@@ -1,5 +1,7 @@
 import pytest
 from unittest.mock import patch
+import sys
+import importlib
 
 # Ensure the module can be imported properly
 from nvidia_deep_stack_bridge import fetch_dcgm_metrics
