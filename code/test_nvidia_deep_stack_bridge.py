@@ -11,7 +11,8 @@ from nvidia_deep_stack_bridge import fetch_dcgm_metrics
 @pytest.fixture(autouse=True)
 def clear_cache():
     """Clear the Streamlit cache before each test."""
-    fetch_dcgm_metrics.clear()
+    if hasattr(fetch_dcgm_metrics, "clear"):
+        fetch_dcgm_metrics.clear()
 
 @patch('nvidia_deep_stack_bridge.requests.get')
 def test_fetch_dcgm_metrics_success(mock_get):
