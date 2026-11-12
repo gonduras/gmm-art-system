@@ -15,6 +15,8 @@ import requests
 import logging
 import streamlit as st
 
+logging.basicConfig(level=logging.INFO)
+
 @st.cache_data(ttl=2.0)
 def fetch_dcgm_metrics(url: str = "http://localhost:9400/metrics", timeout: float = 2.0):
     """Fetches and caches DCGM metrics from the exporter."""
