@@ -61,7 +61,7 @@ def main():
                 st.warning(f"DCGM status: {status_code}")
         except Exception as e:
             logging.error(f"Error processing DCGM telemetry: {e}", exc_info=True)
-            st.error("DCGM offline / unreachable (check logs for details)")
+            st.error("Failed to parse DCGM metrics (check logs for details)")
 
     # 2. NemoClaw / OpenShell Gateway
     with col2:
